@@ -1,0 +1,48 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+  <style>
+      body {
+            font-family: "Poppins", sans-serif;
+        }
+  </style>
+</head>
+<body>
+    <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+        <div class="w3-container">
+          <h3 class="w3-padding-64"><b>Annie Wang</b></h3>
+        </div>
+        <div class="w3-bar-block">
+          <a href="/" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
+          <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Blog Posts</a> 
+        </div>
+      </nav>
+
+    <div class="w3-main" style="margin-left:340px;margin-right:40px">
+        <div class="w3-container" style="margin-top:80px" id="posts">
+        <h1 class="w3-jumbo"><b>Blog Posts</b></h1>
+        <hr style="width:50px;border:5px solid red" class="w3-round">
+        </div>
+    </div>
+    {% for post in posts %}
+        <div class="w3-container" style="border-style: double; border-radius: 5px;margin-left:400px;margin-right:400px;margin-top:20px" id="post_list">
+            <h3><a href="post/{{post.post_id}}">{{post.title}}</a></h3>
+            <p style="color: lightgrey">id: {{post.post_id}} | {{post.time}}</p>
+            <p>{{post.description}}</p>
+        <hr style="width:50px;border:5px solid red" class="w3-round">
+        </div>
+    
+    {% endfor %}
+
+    <div class="footer">
+        <p>Footer</p>
+      </div>
+
+</body>
+</html>
